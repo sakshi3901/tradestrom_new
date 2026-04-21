@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --ts-bg: #000000;
+  --ts-surface: #071122;
+  --ts-line: #27456f;
+  --ts-text-muted: #b9c7db;
+  --ts-accent: #2486fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 171, 230, 0.42) transparent;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5px;
+  height: 0.5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(120, 171, 233, 0.42);
+  border-radius: 999px;
+}
+
+.card {
+  @apply rounded-2xl border border-white/70 bg-white/85 shadow-lg backdrop-blur;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.992);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.reveal-up {
+  animation: reveal-up 0.7s ease-out forwards;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.36s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-up,
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3 {
+    animation: none !important;
+  }
+}
